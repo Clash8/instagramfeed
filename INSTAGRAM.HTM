@@ -1,0 +1,141 @@
+<!--
+version:1.0
+author:Giuseppe Lo Bianco
+date:03/28/2020
+instagram:the_eppe
+site:giuseppelobianco.it
+-->
+<style>
+body  {
+  user-select: none;
+  margin: 20px 0;
+  font-family: sans-serif;
+  background: #fbfbfb;
+}
+svg {
+  cursor:pointer;
+}
+a {
+  text-decoration:none;
+  color: inherit;
+}
+#container {
+  margin: auto;
+  width: 384px;
+  overflow: auto;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+}
+header {
+  height: 48px;
+}
+header > div:first-child {
+  float:left;
+  display: inline;
+}
+header > div > div {
+  float: right;
+  margin: 12px 0px;
+  line-height: 12px;
+}
+header > div > div > p {
+  margin: 0px;
+  font-size: 12px;
+}
+/* profile pictures */
+header > div > img {
+  height: 30px;
+  border-radius: 50%;
+  clear: both;
+  margin: 9px;
+}
+/* menu ico */
+header > div:last-child {
+  float: right;
+  margin: 14px;
+}
+/* post img */
+#container > img {
+  width:  inherit;
+  height: inherit;
+}
+footer {
+  height: 40px;
+}
+/* ico on left */
+footer > div:first-child {
+  float: left;
+  margin: 10px 10px;
+}
+/* ico on right */
+footer > div:last-child {
+  float: right;
+  margin: 10px 12px;
+}
+section {
+  clear: both;
+    margin: 0 12px 12px 12px;
+  font-size: 14px;
+}
+section p {
+    margin: 4px 0;
+}
+/* p tag 37 minutes ago */
+section p:last-child {
+  color: rgba(0,0,0,0.7);
+}
+/* animation on "heart" and "save" */
+.action {
+  animation: action ease-out 0.4s;
+}
+@keyframes action {
+  0%   {transform: scale(0.8);}
+  50%  {transform: scale(1.2);}
+  80%  {transform: scale(0.9);}
+  100% {transform: scale(1.0);}
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script>
+$(function() {
+  $("svg[aria-label='Like']").click(function() {$("svg[aria-label='Like']").hide();$("svg[aria-label='Unlike']").show().addClass("action")});
+  $("svg[aria-label='Unlike']").click(()=>{$("svg[aria-label='Unlike']").hide();$("svg[aria-label='Like']").fadeIn().addClass("action");});
+  $("svg[aria-label='Save']").click(()=>{$("svg[aria-label='Save']").hide();$("svg[aria-label='Remove']").fadeIn().addClass("action");});
+  $("svg[aria-label='Remove']").click(()=>{$("svg[aria-label='Remove']").hide();$("svg[aria-label='Save']").fadeIn().addClass("action");});
+});
+</script>
+<body>
+<div id="container">
+  <header>
+    <div>
+      <img src="./profileimg.jpg">
+      <div>
+        <p><a href=""><b>the_eppe</b></a></p>
+        <p>Sponsored</p>
+      </div>
+    </div>
+    <div>
+      <svg aria-label="More options" class="_8-yf5 " fill="#262626" height="20" viewBox="0 0 48 48" width="16"><circle clip-rule="evenodd" cx="24" cy="8" fill-rule="evenodd" r="4.5"></circle><circle clip-rule="evenodd" cx="24" cy="24" fill-rule="evenodd" r="4.5"></circle><circle clip-rule="evenodd" cx="24" cy="40" fill-rule="evenodd" r="4.5"></circle></svg>
+    </div>
+  </header>
+  <img src="./profileimg.jpg">
+  <footer>
+    <div>
+      <svg style="display:none" aria-label="Unlike" class="_8-yf5 " fill="#ed4956" height="20" viewBox="0 0 48 48" width="24"><path clip-rule="evenodd" d="M35.3 35.6c-9.2 8.2-9.8 8.9-11.3 8.9s-2.1-.7-11.3-8.9C6.5 30.1.5 25.6.5 17.8.5 9.9 6.4 3.5 13.7 3.5 20.8 3.5 24 8.8 24 8.8s3.2-5.3 10.3-5.3c7.3 0 13.2 6.4 13.2 14.3 0 7.8-6.1 12.3-12.2 17.8z" fill-rule="evenodd"></path></svg>
+      <svg aria-label="Like" class="_8-yf5 " fill="#262626" height="20" viewBox="0 0 48 48" width="24"><path clip-rule="evenodd" d="M34.3 3.5C27.2 3.5 24 8.8 24 8.8s-3.2-5.3-10.3-5.3C6.4 3.5.5 9.9.5 17.8s6.1 12.4 12.2 17.8c9.2 8.2 9.8 8.9 11.3 8.9s2.1-.7 11.3-8.9c6.2-5.5 12.2-10 12.2-17.8 0-7.9-5.9-14.3-13.2-14.3zm-1 29.8c-5.4 4.8-8.3 7.5-9.3 8.1-1-.7-4.6-3.9-9.3-8.1-5.5-4.9-11.2-9-11.2-15.6 0-6.2 4.6-11.3 10.2-11.3 4.1 0 6.3 2 7.9 4.2 3.6 5.1 1.2 5.1 4.8 0 1.6-2.2 3.8-4.2 7.9-4.2 5.6 0 10.2 5.1 10.2 11.3 0 6.7-5.7 10.8-11.2 15.6z" fill-rule="evenodd"></path></svg>
+      <svg aria-label="Comment" class="_8-yf5 " fill="#262626" height="20" viewBox="0 0 48 48" width="24"><path clip-rule="evenodd" d="M47.5 46.1l-2.8-11c1.8-3.3 2.8-7.1 2.8-11.1C47.5 11 37 .5 24 .5S.5 11 .5 24 11 47.5 24 47.5c4 0 7.8-1 11.1-2.8l11 2.8c.8.2 1.6-.6 1.4-1.4zm-3-22.1c0 4-1 7-2.6 10-.2.4-.3.9-.2 1.4l2.1 8.4-8.3-2.1c-.5-.1-1-.1-1.4.2-1.8 1-5.2 2.6-10 2.6-11.4 0-20.6-9.2-20.6-20.5S12.7 3.5 24 3.5 44.5 12.7 44.5 24z" fill-rule="evenodd"></path></svg>
+      <svg aria-label="Share Post" class="_8-yf5 " fill="#262626" height="20" viewBox="0 0 48 48" width="24"><path d="M46.5 3.5h-45C.6 3.5.2 4.6.8 5.2l16 15.8 5.5 22.8c.2.9 1.4 1 1.8.3L47.4 5c.4-.7-.1-1.5-.9-1.5zm-40.1 3h33.5L19.1 18c-.4.2-.9.1-1.2-.2L6.4 6.5zm17.7 31.8l-4-16.6c-.1-.4.1-.9.5-1.1L41.5 9 24.1 38.3z"></path><path d="M14.7 48.4l2.9-.7"></path></svg>
+    </div>
+    <div>
+      <svg style="display:none;" aria-label="Remove" class="_8-yf5 " fill="#262626" height="20" viewBox="0 0 48 48" width="24"><path d="M43.5 48c-.4 0-.8-.2-1.1-.4L24 28.9 5.6 47.6c-.4.4-1.1.6-1.6.3-.6-.2-1-.8-1-1.4v-45C3 .7 3.7 0 4.5 0h39c.8 0 1.5.7 1.5 1.5v45c0 .6-.4 1.2-.9 1.4-.2.1-.4.1-.6.1z"></path></svg>
+      <svg aria-label="Save" class="_8-yf5 " fill="#262626" height="20" viewBox="0 0 48 48" width="24"><path d="M43.5 48c-.4 0-.8-.2-1.1-.4L24 29 5.6 47.6c-.4.4-1.1.6-1.6.3-.6-.2-1-.8-1-1.4v-45C3 .7 3.7 0 4.5 0h39c.8 0 1.5.7 1.5 1.5v45c0 .6-.4 1.2-.9 1.4-.2.1-.4.1-.6.1zM24 26c.8 0 1.6.3 2.2.9l15.8 16V3H6v39.9l15.8-16c.6-.6 1.4-.9 2.2-.9z"></path></svg>
+    </div>
+  </footer>
+  <section>
+    <p>Liked by <a href="#"><b>instagram</b></a> and <a href="#"><b>7.4K others</b></a></p>
+    <p><a href="#"><b>the_eppe</b></a> Greek cinematic universe</p>
+    <p><a href="#">View all 86 comments</a></p>
+    <p>37 minutes ago</p>
+  </section>
+</div>
+</body>
