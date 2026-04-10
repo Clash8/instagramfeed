@@ -8,4 +8,4 @@ jquery
 svg
 
 
-to try [https:/](https://clash8.github.io/instagramfeed/INSTAGRAM.HTM)
+to try [click here](https://clash8.github.io/instagramfeed/INSTAGRAM.HTM)
